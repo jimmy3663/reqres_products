@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    _PROJECT_NAME: "user34-products"
+    _PROJECT_NAME: "user34-cicd"
 
 phases:
   install:
