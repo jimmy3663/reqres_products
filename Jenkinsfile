@@ -5,10 +5,10 @@ node {
     MVN_HOME = tool 'maven 3.8.5'
   }
   stage('project-clone'){
-    git (
-      credentialsId: "${github-access-token}",
-      url: "https://github.com/jimmy3663/reqres_products"
-    )
+    step{
+      echo 'Clone'
+       git branch: 'master', credentialsId: 'github-id', url: 'https://github.com/jimmy3663/reqres_products'
+    }
 }
   stage('project-build'){
     sh "'${MVN_HOME}/bin/mvn' package"
