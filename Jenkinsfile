@@ -7,7 +7,7 @@ node {
   stage('project-clone'){
     step{
       echo 'Clone'
-       git branch: 'master', credentialsId: 'github-id', url: 'https://github.com/jimmy3663/reqres_products'
+      checkout scm
     }
 }
   stage('project-build'){
