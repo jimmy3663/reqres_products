@@ -6,7 +6,6 @@ node {
   }
   stage('project-clone'){
     git (
-      branch: "master“,
       credentialsId: "${github-access-token}",
       url: "https://github.com/jimmy3663/reqres_products"
     )
