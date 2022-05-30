@@ -2,7 +2,7 @@ node {
   def MVN_HOME
   stage('init') {
     echo "Current workspace : ${WORKSPACE}"
-    MVN_HOME = tool 'maven3'
+    MVN_HOME = tool 'maven 3.8.5'
   }
   stage('project-clone'){
     git (
