@@ -13,7 +13,7 @@ node {
 stage('deploy'){
     fileOperations([
       // 배포 디렉토리 삭제
-//       folderDeleteOperation('target/deploy'),
+      folderDeleteOperation('target/deploy'),
       // 배포 디렉토리 생성
       folderCreateOperation('target/deploy'),
       // CodeDeploy 에서 사용할 scripts 디렉토리 복사 
