@@ -24,7 +24,7 @@ stage('deploy'){
       fileCopyOperation(excludes: '', flattenFiles: true, includes: 'target/*.jar', targetLocation: 'target/deploy'),
       
       // CodeDeploy 에서 사용할 appspec 파일 복사
-      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'appspec.yml', targetLocation: 'target/deploy’)
+      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'appspec.yml', targetLocation: 'target/deploy')
     ])
     dir("./target/deploy"){
       withCredentials([[$class:    'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: "${awsCredentialsId}",  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
