@@ -5,10 +5,7 @@ node {
     MVN_HOME = tool 'maven 3.8.5'
   }
   stage('project-clone'){
-    step{
-      echo 'Clone'
-      checkout scm
-    }
+    git https://github.com/jimmy3663/reqres_products
 }
   stage('project-build'){
     sh "'${MVN_HOME}/bin/mvn' package"
