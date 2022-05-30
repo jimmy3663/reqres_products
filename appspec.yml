@@ -1,19 +1,22 @@
 version: 0.0
 os: linux
 files:
-  - source:  /
-    destination: /home/ubuntu/build/
+  - source:  ./reqres_products-0.0.1-SNAPSHOT.jar
+    destination: /home/ubuntu/reqres_products/
 
 permissions:
-  - object: /
+  - object: /home/ubuntu/reqres_products
     pattern: "**"
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
+    mode: 750
+    type:
+      - file
 
 hooks:
-  BeforeInstall:
-    - location: deploy-before.sh
-      runas: ubuntu
-  ApplicationStart:
-    - location: deploy.sh
-      runas: ubuntu
+  pplicationStart:
+    - location: start_server.sh
+      runas: root
+  ApplicationStop:
+    - location: stop_server.sh
+      runas: root
