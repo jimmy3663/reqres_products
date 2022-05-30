@@ -17,7 +17,8 @@ stage('deploy'){
       // 배포 디렉토리 생성
       folderCreateOperation('target/deploy'),
       // CodeDeploy 에서 사용할 scripts 디렉토리 복사 
-      folderCopyOperation(sourceFolderPath: 'scripts', destinationFolderPath: 'target/deploy/scripts'),
+      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'start_server.sh', targetLocation: 'target/deploy'),
+      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'stop_server.sh', targetLocation: 'target/deploy'),
       
       // 빌드된 Application 의 결과물 복사
       fileCopyOperation(excludes: '', flattenFiles: true, includes: 'target/*.jar', targetLocation: 'target/deploy'),
