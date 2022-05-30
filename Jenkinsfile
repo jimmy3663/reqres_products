@@ -42,7 +42,7 @@ stage('deploy'){
         // CodeDeploy 배포그룹명
         deploymentGroupName: 'ljs-springboot-deploy-grp',
         excludes: '',
-        iamRoleArn: '',
+        iamRoleArn: 'arn:aws:iam::815854164176:role/ljs-codedeploy',
         // 배포 어플리케이션의 Artifact 위치
         includes: '**',
         proxyHost: '',
