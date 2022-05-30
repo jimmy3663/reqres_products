@@ -50,7 +50,7 @@ stage('deploy'){
         // Region 명
         region: 'eu-west-3',
         // Archive 될 S3 Bucket 명
-        s3bucket: 'ljs-codedeploy-archive',
+        s3bucket: 'ljs-s3-bucket',
         // Archive 될 S3 Bucket 경로
         s3prefix: "deploy",
         subdirectory: '',
