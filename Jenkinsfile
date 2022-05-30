@@ -10,7 +10,7 @@ node {
       url: "https://github.com/jimmy3663/reqres_products"
     )
 }
-  stage('project-build’){
+  stage('project-build'){
     sh "'${MVN_HOME}/bin/mvn' package"
   }
 // stage('deploy'){
