@@ -7,8 +7,8 @@ files:
 permissions:
   - object: /home/ubuntu/reqres_products
     pattern: "**"
-    owner: root
-    group: root
+    owner: ubunutu
+    group: ubuntu
     mode: 750
     type:
       - file
@@ -16,7 +16,7 @@ permissions:
 hooks:
   pplicationStart:
     - location: start_server.sh
-      runas: root
+      runas: ubuntu
   ApplicationStop:
     - location: stop_server.sh
-      runas: root
+      runas: ubuntu
