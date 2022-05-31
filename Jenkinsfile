@@ -54,7 +54,7 @@ stage('deploy'){
         // Archive 될 S3 Bucket 경로
         s3prefix: "deploy",
         subdirectory: '',
-        versionFileName: '',
+            versionFileName: '${BUILD_NUMBER}',
         // CodeDeploy 가 수행 완료 될때 까지의 대기여부 설정
         waitForCompletion: true,
         // CodeDeploy 가 수행 완료 될때 까지의 Timeout
