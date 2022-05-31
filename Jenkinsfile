@@ -21,7 +21,7 @@ stage('deploy'){
       fileCopyOperation(excludes: '', flattenFiles: true, includes: 'stop_server.sh', targetLocation: 'target/deploy'),
       
       // 빌드된 Application 의 결과물 복사
-      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'target/*.jar', targetLocation: 'target/deploy'),
+      fileCopyOperation(excludes: '', flattenFiles: true, includes: 'target/*SNAPSHOT.jar', targetLocation: 'target/deploy'),
       
       // CodeDeploy 에서 사용할 appspec 파일 복사
       fileCopyOperation(excludes: '', flattenFiles: true, includes: 'appspec.yml', targetLocation: 'target/deploy')
