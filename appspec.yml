@@ -7,7 +7,7 @@ files:
 permissions:
   - object: /home/ubuntu/reqres_products
     pattern: "**"
-    owner: ubunutu
+    owner: ubuntu
     group: ubuntu
     mode: 750
     type:
